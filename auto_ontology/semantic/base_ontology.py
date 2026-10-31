@@ -153,6 +153,42 @@ def match_term(
     return None
 
 
+def candidate_concepts(
+    database_name: str | None,
+    table_name: str,
+    column_names: Iterable[str] = (),
+    *,
+    limit: int = 6,
+    pack: BaseOntology | None = None,
+) -> list[Concept]:
+    """Concepts worth offering the extractor for one table.
+
+    A table hint is authoritative. Beyond it a concept qualifies when its label
+    appears as whole words in the table name or a column name — enough to put the
+    concept in front of the model without inviting false matches.
+    """
+    base = pack or load_pack()
+    found: list[Concept] = []
+    if database_name:
+        concept_id = base.by_table.get(f"{database_name}.{table_name}".lower())
+        if concept_id:
+            found.append(base.concept(concept_id))
+
+    haystacks = [_norm(table_name), *(_norm(name) for name in column_names)]
+    for concept in base.concepts:
+        if concept in found:
+            continue
+        label = _norm(concept.label)
+        if len(label) < 4:
+            continue
+        padded = f" {label} "
+        if any(padded in f" {text} " for text in haystacks):
+            found.append(concept)
+        if len(found) >= limit:
+            break
+    return found[:limit]
+
+
 @dataclass
 class TermRow:
     """One compiled Term and the tables that represent it."""

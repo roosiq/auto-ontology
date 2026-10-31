@@ -217,12 +217,89 @@ def _extract_synonyms(description: str) -> list[str]:
     return [s.strip() for s in result.synonyms if s.strip()]
 
 
+def _candidate_concepts(
+    database_name: str | None,
+    table_name: str,
+    specs: list[ColumnAttributeSpec],
+    *,
+    limit: int = 6,
+) -> list[Any]:
+    """Base-ontology concepts that plausibly describe this table."""
+    from auto_ontology.semantic import base_ontology as bo
+
+    try:
+        return bo.candidate_concepts(
+            database_name,
+            table_name,
+            [spec.source_column for spec in specs],
+            limit=limit,
+        )
+    except FileNotFoundError:
+        return []
+
+
+def _grounding_block(concepts: list[Any]) -> str:
+    """Prompt text that asks the model to reuse a base concept when one applies."""
+    if not concepts:
+        return ""
+    lines = []
+    for concept in concepts:
+        synonyms = f" (also: {', '.join(concept.synonyms)})" if concept.synonyms else ""
+        lines.append(f"- {concept.label}{synonyms}: {concept.definition}")
+    return (
+        "\nBase ontology concepts that may already cover this table "
+        "(REUSE one when it applies: copy its label exactly as the Term name and "
+        "keep its meaning; only invent a new name when none apply):\n"
+        + "\n".join(lines)
+        + "\n"
+    )
+
+
+def _adopt_base_concepts(
+    table_result: TableTermsResult,
+    database_name: str | None,
+    table_name: str,
+    concepts: list[Any],
+) -> None:
+    """Align the model's proposals to the concepts offered in the prompt.
+
+    The model is asked to reuse a label, but reuse is enforced here: when a
+    proposed Term resolves to a base concept, it takes the concept's label and
+    synonyms so later persistence can link the table to the existing Term for
+    that concept instead of minting a near-duplicate.
+    """
+    if not concepts:
+        return
+    from auto_ontology.semantic import base_ontology as bo
+
+    try:
+        pack = bo.load_pack()
+    except FileNotFoundError:
+        return
+    table_key = f"{database_name}.{table_name}" if database_name else ""
+    offered = {concept.id for concept in concepts}
+
+    for term in table_result.terms:
+        match = bo.match_term(
+            term.name, table_keys=[table_key] if table_key else [], pack=pack
+        )
+        if match is None or match.concept_id not in offered:
+            continue
+        concept = pack.concept(match.concept_id)
+        term.name = concept.label
+        merged = [*(term.synonyms or []), *concept.synonyms]
+        term.synonyms = sorted({s for s in merged if s and s != concept.label})
+        if not term.description:
+            term.description = concept.definition
+
+
 def extract_term(
     table: dict[str, Any],
     ctx: dict[str, Any],
     specs: list[ColumnAttributeSpec],
     *,
     domain_summary: DomainSummary | None = None,
+    database_name: str | None = None,
 ) -> TableTermsResult:
     """Propose one or more Terms and assign candidate column attributes to each."""
     if not specs:
@@ -237,12 +314,14 @@ def extract_term(
             f"\nDomains: {', '.join(domain_summary.domains[:8])}\n"
             f"Core entities: {', '.join(domain_summary.core_entities[:12])}\n"
         )
+    concepts = _candidate_concepts(database_name, table["name"], specs)
     prompt = (
         f"Table: {table['name']}\n"
         f"Description: {description}\n"
         f"Candidate columns (assign each to exactly one Term with a display_name):\n"
         f"{spec_lines}\n"
         f"{domain_block}"
+        f"{_grounding_block(concepts)}"
     )
     result = invoke_with_structured_output(
         get_llm_client(temperature=0.0, max_tokens=4096),
@@ -253,6 +332,7 @@ def extract_term(
         return _fallback_result(table, specs)
 
     table_result = _sanitize_result(result, table=table, specs=specs)
+    _adopt_base_concepts(table_result, database_name, table["name"], concepts)
 
     synonyms = _extract_synonyms(description)
     if synonyms:

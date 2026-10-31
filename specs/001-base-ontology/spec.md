@@ -21,6 +21,25 @@ Give compilation a **base ontology**: a curated, cited concept vocabulary that t
 are aligned to, so that (a) a term carries a real concept identity and definition, and
 (b) the same concept is one term shared by many tables, including across databases.
 
+## Reuse at generation time (second half)
+
+Grounding after compilation cleans up duplicates, but the compiler should reuse a
+concept when one applies rather than invent a name and be corrected later.
+
+- `extract_term` receives the base concepts that plausibly cover the table (table
+  hint first, then concepts whose label appears as whole words in the table or
+  column names) and is asked to reuse one when it applies.
+- The proposal is then *enforced* deterministically: a Term that resolves to a base
+  concept takes the concept's label, synonyms and definition, whatever the model
+  wrote.
+- Persistence uses `dal/terms.upsert_concept_term`, which attaches the table to the
+  existing Term for that concept instead of minting a qualified duplicate. One
+  concept is one Term spanning tables and databases from the moment it is written.
+
+Evidence: a new `demo2` database with a `customers` table, ingested and compiled
+after the change, attached to the existing **Customer** Term — which now covers
+`debit_card_specializing`, `demo` and `demo2` under one `urn:ao:finance:Customer`.
+
 ## Non-goals
 
 - No column-attribute concepts in this change; terms only.

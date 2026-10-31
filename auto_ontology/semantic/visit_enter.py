@@ -31,6 +31,7 @@ from auto_ontology.dal.datasources import (
 from auto_ontology.semantic.date_format import infer_date_format, is_date_type
 from auto_ontology.dal.terms import (
     fetch_terms_and_attributes_for_table,
+    upsert_concept_term,
     upsert_table_term,
 )
 from auto_ontology.semantic.deterministic import column_attribute_specs
@@ -850,7 +851,13 @@ def process_table(
 
     # --- LLM: propose Term(s) and display names ---
     with _step(table_name, f"Generating terms and descriptions ({len(specs)} columns)"):
-        term_result = extract_term(table, ctx, specs, domain_summary=domain_summary)
+        term_result = extract_term(
+            table,
+            ctx,
+            specs,
+            domain_summary=domain_summary,
+            database_name=database_name,
+        )
     apply_display_names_to_specs(term_result, specs)
     spec_by_column = {spec.source_column: spec for spec in specs}
     persisted_terms = _terms_with_assignments(term_result, spec_by_column)
@@ -878,6 +885,7 @@ def process_table(
                 table_id,
                 result_term_names,
                 result_attr_names,
+                table_key=f"{database_name}.{table_name}" if database_name else "",
             )
 
         logger.info(
@@ -917,16 +925,43 @@ def _commit_terms(
     table_id: str,
     result_term_names: list[str],
     result_attr_names: list[str],
+    *,
+    table_key: str = "",
 ) -> None:
-    """Write table-private Terms and their ColumnAttributes to the store."""
+    """Write Terms and their ColumnAttributes to the store.
+
+    A Term that resolves to a base-ontology concept joins the existing Term for
+    that concept — that is where reuse across tables and databases happens.
+    """
+    from auto_ontology.semantic import base_ontology as bo
+
+    try:
+        pack = bo.load_pack()
+    except FileNotFoundError:
+        pack = None
+
     for term, assignments in persisted_terms:
         proposed_name = term.name
-        persisted = upsert_table_term(
-            proposed_name,
-            term.description,
-            table_id,
-            synonyms=term.synonyms,
+        match = (
+            bo.match_term(proposed_name, table_keys=[table_key], pack=pack)
+            if pack is not None and table_key
+            else None
         )
+        if match is not None:
+            persisted = upsert_concept_term(
+                match.concept_id,
+                proposed_name,
+                term.description,
+                table_id,
+                synonyms=term.synonyms,
+            )
+        else:
+            persisted = upsert_table_term(
+                proposed_name,
+                term.description,
+                table_id,
+                synonyms=term.synonyms,
+            )
         if persisted is None:
             continue
         _, term.name = persisted

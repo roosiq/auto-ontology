@@ -414,6 +414,67 @@ def update_term(
     return result
 
 
+def upsert_concept_term(
+    concept_id: str,
+    name: str,
+    description: str | None,
+    table_id: str,
+    *,
+    synonyms: list[str] | None = None,
+) -> tuple[str, str] | None:
+    """Attach *table_id* to the Term that already represents *concept_id*.
+
+    This is the reuse path the base ontology needs: a table whose concept is
+    already represented elsewhere in the catalog joins that Term instead of
+    minting a qualified near-duplicate, so one concept is one Term spanning
+    tables and databases. Falls back to a fresh Term when the concept is not yet
+    represented, and to nothing when the table is unknown.
+    """
+    # Read first: the create fallback opens its own write transaction, and this
+    # store does not nest them.
+    existing = store().query_read(
+        select(s.term.c.id, s.term.c.name, s.term.c.description, s.term.c.synonyms)
+        .where(
+            s.term.c.imported_id == concept_id,
+            s.term.c.source == SEMANTIC_SOURCE,
+        )
+        .limit(1)
+    )
+    if not existing:
+        return upsert_table_term(name, description or "", table_id, synonyms=synonyms)
+
+    with write_transaction():
+        row = existing[0]
+        term_id = row["id"]
+        linked = store().query_read(
+            select(s.table__term.c.table_id).where(
+                s.table__term.c.term_id == term_id,
+                s.table__term.c.table_id == table_id,
+            )
+        )
+        if not linked:
+            store().query_write(
+                insert(s.table__term).values(table_id=table_id, term_id=term_id)
+            )
+
+        merged_synonyms = sorted(
+            {
+                *[s for s in (row["synonyms"] or []) if s],
+                *[s for s in (synonyms or []) if s],
+            }
+            - {row["name"]}
+        )
+        # Keep the longer description: a reused concept accumulates the richest
+        # explanation any table produced for it.
+        keep_description = row["description"] or ""
+        candidate = description or ""
+        values: dict[str, Any] = {"synonyms": merged_synonyms}
+        if len(candidate) > len(keep_description):
+            values["description"] = candidate
+        store().query_write(update(s.term).where(s.term.c.id == term_id).values(**values))
+        return term_id, row["name"]
+
+
 def upsert_table_term(
     name: str,
     description: str,

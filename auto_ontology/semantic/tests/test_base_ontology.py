@@ -10,6 +10,7 @@ from auto_ontology.semantic.base_ontology import (
     BaseOntology,
     Concept,
     TermRow,
+    candidate_concepts,
     load_pack,
     match_term,
     plan_reconcile,
@@ -123,6 +124,35 @@ def test_plan_is_stable_for_identical_input() -> None:
     first, _ = plan_reconcile(rows, pack)
     second, _ = plan_reconcile(rows, pack)
     assert [p.to_report() for p in first] == [p.to_report() for p in second]
+
+
+def test_candidate_concepts_offers_the_table_hint_first() -> None:
+    pack = _pack()
+    offers = candidate_concepts("bank", "card", ["card_type"], pack=pack)
+    assert [c.id for c in offers] == ["urn:test:Card"]
+
+
+def test_candidate_concepts_falls_back_to_label_words() -> None:
+    pack = _pack()
+    offers = candidate_concepts("shop", "customer_transaction", ["amount"], pack=pack)
+    assert "urn:test:Transaction" in [c.id for c in offers]
+
+
+def test_candidate_concepts_ignores_short_labels_and_noise() -> None:
+    pack = _pack()
+    assert candidate_concepts("zoo", "zebra_stripes", ["stripe_count"], pack=pack) == []
+
+
+def test_pack_covers_every_bird_table_once() -> None:
+    pack = load_pack()
+    hints = [
+        table
+        for concept in pack.concepts
+        for table in concept.tables
+        if not table.startswith("demo")
+    ]
+    assert len(hints) == 75
+    assert len(set(hints)) == 75
 
 
 def test_unmatched_terms_are_reported_not_dropped() -> None:
