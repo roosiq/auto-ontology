@@ -1,0 +1,1228 @@
+{
+  "version": "1.0.0",
+  "description": "Base ontology for compiling business terms over relational catalogs. Concepts carry a cited source and the tables they are expected to describe.",
+  "concepts": [
+    {
+      "id": "urn:ao:card_games:Card",
+      "label": "Trading Card",
+      "definition": "A single collectible playing card, identified by its set, collector number and name.",
+      "synonyms": [
+        "Card",
+        "Magic Card"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "BIRD card_games database, table cards"
+      },
+      "tables": [
+        "card_games.cards"
+      ]
+    },
+    {
+      "id": "urn:ao:card_games:CardSet",
+      "label": "Card Set",
+      "definition": "A published release of cards that share a name, code and release date.",
+      "synonyms": [
+        "Set",
+        "Expansion"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "card_games.sets"
+      },
+      "tables": [
+        "card_games.sets"
+      ]
+    },
+    {
+      "id": "urn:ao:card_games:SetTranslation",
+      "label": "Card Set Translation",
+      "definition": "The name of a card set rendered in a non-English language.",
+      "synonyms": [
+        "Set Translation"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "card_games.set_translations"
+      },
+      "tables": [
+        "card_games.set_translations"
+      ]
+    },
+    {
+      "id": "urn:ao:card_games:CardLegality",
+      "label": "Card Legality",
+      "definition": "The format in which a card is legal, restricted or banned.",
+      "synonyms": [
+        "Legality",
+        "Format Legality"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "card_games.legalities"
+      },
+      "tables": [
+        "card_games.legalities"
+      ]
+    },
+    {
+      "id": "urn:ao:card_games:CardRuling",
+      "label": "Card Ruling",
+      "definition": "An official rules clarification issued for a specific card and date.",
+      "synonyms": [
+        "Ruling"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "card_games.rulings"
+      },
+      "tables": [
+        "card_games.rulings"
+      ]
+    },
+    {
+      "id": "urn:ao:card_games:ForeignCardData",
+      "label": "Foreign Card Data",
+      "definition": "Card text translated into another language, held per card and language.",
+      "synonyms": [
+        "Foreign Data",
+        "Localised Card Text"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "card_games.foreign_data"
+      },
+      "tables": [
+        "card_games.foreign_data"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:Post",
+      "label": "Post",
+      "definition": "A question or answer published on the community site, with its score and owner.",
+      "synonyms": [
+        "Question",
+        "Question Post"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/DiscussionForumPosting",
+        "note": "schema.org DiscussionForumPosting; table posts"
+      },
+      "tables": [
+        "codebase_community.posts"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:Comment",
+      "label": "Comment",
+      "definition": "A comment attached to a post by a user.",
+      "synonyms": [],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Comment",
+        "note": "table comments"
+      },
+      "tables": [
+        "codebase_community.comments"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:Badge",
+      "label": "Badge",
+      "definition": "An achievement awarded to a user for a defined milestone.",
+      "synonyms": [],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table badges"
+      },
+      "tables": [
+        "codebase_community.badges"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:User",
+      "label": "User",
+      "definition": "A registered community account with reputation and profile attributes.",
+      "synonyms": [
+        "Account",
+        "Member"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Person",
+        "note": "table users"
+      },
+      "tables": [
+        "codebase_community.users"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:PostHistory",
+      "label": "Post History",
+      "definition": "An audit event recording a change made to a post, such as an edit or closure.",
+      "synonyms": [
+        "Edit History"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table postHistory"
+      },
+      "tables": [
+        "codebase_community.postHistory"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:PostLink",
+      "label": "Post Link",
+      "definition": "A declared relationship between two posts, such as duplicate or related.",
+      "synonyms": [
+        "Related Post"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table postLinks"
+      },
+      "tables": [
+        "codebase_community.postLinks"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:Tag",
+      "label": "Tag",
+      "definition": "A topical label attached to a post for discovery and filtering.",
+      "synonyms": [
+        "Topic"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table tags"
+      },
+      "tables": [
+        "codebase_community.tags"
+      ]
+    },
+    {
+      "id": "urn:ao:codebase:Vote",
+      "label": "Vote",
+      "definition": "A single up or down vote cast by a user on a post.",
+      "synonyms": [
+        "Upvote",
+        "Vote Cast"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table votes"
+      },
+      "tables": [
+        "codebase_community.votes"
+      ]
+    },
+    {
+      "id": "urn:ao:education:School",
+      "label": "School",
+      "definition": "A school site, identified by county, district and school code, with its type and address.",
+      "synonyms": [
+        "School Site"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/School",
+        "note": "table schools"
+      },
+      "tables": [
+        "california_schools.schools"
+      ]
+    },
+    {
+      "id": "urn:ao:education:FreeReducedPriceMeal",
+      "label": "Free or Reduced Price Meal",
+      "definition": "Enrolment counts used to measure a school's share of students eligible for subsidised meals.",
+      "synonyms": [
+        "FRPM",
+        "Subsidised Meal Count"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table frpm"
+      },
+      "tables": [
+        "california_schools.frpm"
+      ]
+    },
+    {
+      "id": "urn:ao:education:SatScore",
+      "label": "SAT Score",
+      "definition": "Average SAT reading, writing and mathematics scores reported for a school.",
+      "synonyms": [
+        "SAT Result",
+        "Test Score"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table satscores"
+      },
+      "tables": [
+        "california_schools.satscores"
+      ]
+    },
+    {
+      "id": "urn:ao:finance:Customer",
+      "label": "Customer",
+      "definition": "A person or business that holds an account or buys from the business.",
+      "synonyms": [
+        "Client",
+        "Account Holder"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "customers tables"
+      },
+      "tables": [
+        "debit_card_specializing.customers"
+      ]
+    },
+    {
+      "id": "urn:ao:finance:Transaction",
+      "label": "Transaction",
+      "definition": "A single monetary event with an amount, timestamp and the parties involved.",
+      "synonyms": [
+        "Payment",
+        "Payment Transaction",
+        "Transfer"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "transaction tables"
+      },
+      "tables": [
+        "debit_card_specializing.transactions_1k",
+        "financial.trans"
+      ]
+    },
+    {
+      "id": "urn:ao:finance:Product",
+      "label": "Product",
+      "definition": "A good or service offered for sale, identified by a product code.",
+      "synonyms": [
+        "Item",
+        "Article"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Product",
+        "note": "table products"
+      },
+      "tables": [
+        "debit_card_specializing.products"
+      ]
+    },
+    {
+      "id": "urn:ao:finance:GasStation",
+      "label": "Gas Station",
+      "definition": "A fuel retail site where a card transaction took place.",
+      "synonyms": [
+        "Fuel Station",
+        "Petrol Station"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table gasstations"
+      },
+      "tables": [
+        "debit_card_specializing.gasstations"
+      ]
+    },
+    {
+      "id": "urn:ao:finance:Period",
+      "label": "Consumption Period",
+      "definition": "A year and month bucket used to aggregate activity.",
+      "synonyms": [
+        "Reporting Period",
+        "Year Month",
+        "Month"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table yearmonth"
+      },
+      "tables": [
+        "debit_card_specializing.yearmonth"
+      ]
+    },
+    {
+      "id": "urn:ao:sport:Country",
+      "label": "Country",
+      "definition": "A sovereign state or recognised geographic territory.",
+      "synonyms": [
+        "Nation"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Country",
+        "note": "table Country"
+      },
+      "tables": [
+        "european_football_2.Country"
+      ]
+    },
+    {
+      "id": "urn:ao:sport:League",
+      "label": "League",
+      "definition": "A competitive football league identified by a name and country.",
+      "synonyms": [
+        "Competition"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/SportsOrganization",
+        "note": "table League"
+      },
+      "tables": [
+        "european_football_2.League"
+      ]
+    },
+    {
+      "id": "urn:ao:sport:Match",
+      "label": "Match",
+      "definition": "A played fixture between two teams with its date, score and stage.",
+      "synonyms": [
+        "Game",
+        "Fixture"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/SportsEvent",
+        "note": "table Match"
+      },
+      "tables": [
+        "european_football_2.Match"
+      ]
+    },
+    {
+      "id": "urn:ao:sport:Player",
+      "label": "Player",
+      "definition": "A registered athlete with identity, physical and career attributes.",
+      "synonyms": [
+        "Athlete",
+        "Footballer"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Person",
+        "note": "table Player"
+      },
+      "tables": [
+        "european_football_2.Player"
+      ]
+    },
+    {
+      "id": "urn:ao:sport:PlayerAttribute",
+      "label": "Player Attribute",
+      "definition": "A dated snapshot of one player's rated technical and physical abilities.",
+      "synonyms": [
+        "Player Rating",
+        "Player Attributes"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table Player_Attributes"
+      },
+      "tables": [
+        "european_football_2.Player_Attributes"
+      ]
+    },
+    {
+      "id": "urn:ao:sport:Team",
+      "label": "Team",
+      "definition": "A football club identified by long and short names.",
+      "synonyms": [
+        "Club",
+        "Football Club"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/SportsTeam",
+        "note": "table Team"
+      },
+      "tables": [
+        "european_football_2.Team"
+      ]
+    },
+    {
+      "id": "urn:ao:sport:TeamAttribute",
+      "label": "Team Attribute",
+      "definition": "A dated snapshot of a club's build-up, chance-creation and defensive ratings.",
+      "synonyms": [
+        "Team Rating",
+        "Team Attributes"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table Team_Attributes"
+      },
+      "tables": [
+        "european_football_2.Team_Attributes"
+      ]
+    },
+    {
+      "id": "urn:ao:bank:Account",
+      "label": "Account",
+      "definition": "A bank account held by a client, opened on a date and held at a branch.",
+      "synonyms": [
+        "Bank Account"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table account"
+      },
+      "tables": [
+        "financial.account"
+      ]
+    },
+    {
+      "id": "urn:ao:bank:Client",
+      "label": "Client",
+      "definition": "A bank client, a person identified by birth number and gender.",
+      "synonyms": [
+        "Customer",
+        "Account Holder"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table client"
+      },
+      "tables": [
+        "financial.client"
+      ]
+    },
+    {
+      "id": "urn:ao:bank:Disposition",
+      "label": "Account Disposition",
+      "definition": "The role that links a client to an account, such as owner or signatory.",
+      "synonyms": [
+        "Disposition",
+        "Account Holder Role"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table disp"
+      },
+      "tables": [
+        "financial.disp"
+      ]
+    },
+    {
+      "id": "urn:ao:bank:District",
+      "label": "District",
+      "definition": "An administrative region with population and municipality statistics.",
+      "synonyms": [
+        "Region"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/AdministrativeArea",
+        "note": "table district"
+      },
+      "tables": [
+        "financial.district"
+      ]
+    },
+    {
+      "id": "urn:ao:bank:Loan",
+      "label": "Loan",
+      "definition": "Credit granted to an account with an amount, duration, rate and repayment status.",
+      "synonyms": [
+        "Credit"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table loan"
+      },
+      "tables": [
+        "financial.loan"
+      ]
+    },
+    {
+      "id": "urn:ao:bank:PaymentOrder",
+      "label": "Payment Order",
+      "definition": "A standing instruction to move money from an account, with its own beneficiary.",
+      "synonyms": [
+        "Standing Order",
+        "Bank Order"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table order"
+      },
+      "tables": [
+        "financial.order"
+      ]
+    },
+    {
+      "id": "urn:ao:finance:PaymentCard",
+      "label": "Payment Card",
+      "definition": "A card issued against an account, with a type and issue date.",
+      "synonyms": [
+        "Card",
+        "Bank Card",
+        "Credit Card"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "card tables (financial.card is the banking sense)"
+      },
+      "tables": [
+        "financial.card"
+      ],
+      "note": "table card (banking sense)"
+    },
+    {
+      "id": "urn:ao:f1:Circuit",
+      "label": "Circuit",
+      "definition": "A race venue with its location, altitude and reference layout.",
+      "synonyms": [
+        "Track",
+        "Race Track"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table circuits"
+      },
+      "tables": [
+        "formula_1.circuits"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:Constructor",
+      "label": "Constructor",
+      "definition": "A team that builds and enters cars in races.",
+      "synonyms": [
+        "Team",
+        "Car Constructor"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table constructors"
+      },
+      "tables": [
+        "formula_1.constructors"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:ConstructorResult",
+      "label": "Constructor Result",
+      "definition": "The points a constructor earned from one race.",
+      "synonyms": [
+        "Team Result"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table constructorResults"
+      },
+      "tables": [
+        "formula_1.constructorResults"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:ConstructorStanding",
+      "label": "Constructor Standing",
+      "definition": "A constructor's cumulative championship position after a race.",
+      "synonyms": [
+        "Team Standing"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table constructorStandings"
+      },
+      "tables": [
+        "formula_1.constructorStandings"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:Driver",
+      "label": "Driver",
+      "definition": "A racing driver with name, nationality and date of birth.",
+      "synonyms": [
+        "Racer"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Person",
+        "note": "table drivers"
+      },
+      "tables": [
+        "formula_1.drivers"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:DriverStanding",
+      "label": "Driver Standing",
+      "definition": "A driver's cumulative championship position and points after a race.",
+      "synonyms": [
+        "Championship Standing"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table driverStandings"
+      },
+      "tables": [
+        "formula_1.driverStandings"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:LapTime",
+      "label": "Lap Time",
+      "definition": "One driver's recorded lap, with position, time and speed.",
+      "synonyms": [
+        "Lap"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table lapTimes"
+      },
+      "tables": [
+        "formula_1.lapTimes"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:PitStop",
+      "label": "Pit Stop",
+      "definition": "A pit lane visit with its duration and lap.",
+      "synonyms": [
+        "Pit"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table pitStops"
+      },
+      "tables": [
+        "formula_1.pitStops"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:Qualifying",
+      "label": "Qualifying Result",
+      "definition": "A driver's qualifying position, grid slot and session times for a race.",
+      "synonyms": [
+        "Qualifying"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table qualifying"
+      },
+      "tables": [
+        "formula_1.qualifying"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:Race",
+      "label": "Race",
+      "definition": "A championship round held on a circuit on a date.",
+      "synonyms": [
+        "Grand Prix",
+        "Round"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/SportsEvent",
+        "note": "table races"
+      },
+      "tables": [
+        "formula_1.races"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:RaceResult",
+      "label": "Race Result",
+      "definition": "A driver's finishing position, points and status in one race.",
+      "synonyms": [
+        "Result"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table results"
+      },
+      "tables": [
+        "formula_1.results"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:Season",
+      "label": "Season",
+      "definition": "A championship year.",
+      "synonyms": [
+        "Championship Year"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table seasons"
+      },
+      "tables": [
+        "formula_1.seasons"
+      ]
+    },
+    {
+      "id": "urn:ao:f1:Status",
+      "label": "Status",
+      "definition": "The coded reason a driver finished or retired from a race.",
+      "synonyms": [
+        "Finish Status",
+        "Retirement Reason"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table status"
+      },
+      "tables": [
+        "formula_1.status"
+      ]
+    },
+    {
+      "id": "urn:ao:club:ClubEvent",
+      "label": "Event",
+      "definition": "A club event with a date, type and venue.",
+      "synonyms": [
+        "Activity"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Event",
+        "note": "table event"
+      },
+      "tables": [
+        "student_club.event"
+      ]
+    },
+    {
+      "id": "urn:ao:club:Attendance",
+      "label": "Event Attendance",
+      "definition": "A member's recorded attendance or role at one event.",
+      "synonyms": [
+        "Attendance"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table attendance"
+      },
+      "tables": [
+        "student_club.attendance"
+      ]
+    },
+    {
+      "id": "urn:ao:club:Budget",
+      "label": "Budget",
+      "definition": "A planned amount allocated to a club activity, with linked income and expenses.",
+      "synonyms": [
+        "Allocation"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table budget"
+      },
+      "tables": [
+        "student_club.budget"
+      ]
+    },
+    {
+      "id": "urn:ao:club:Expense",
+      "label": "Expense",
+      "definition": "Money spent by the club, linked to a budget line.",
+      "synonyms": [
+        "Spend",
+        "Cost"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table expense"
+      },
+      "tables": [
+        "student_club.expense"
+      ]
+    },
+    {
+      "id": "urn:ao:club:Income",
+      "label": "Income",
+      "definition": "Money received by the club, linked to a budget line.",
+      "synonyms": [
+        "Revenue"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table income"
+      },
+      "tables": [
+        "student_club.income"
+      ]
+    },
+    {
+      "id": "urn:ao:club:Major",
+      "label": "Academic Major",
+      "definition": "A student's declared field of study.",
+      "synonyms": [
+        "Major",
+        "Field of Study"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table major"
+      },
+      "tables": [
+        "student_club.major"
+      ]
+    },
+    {
+      "id": "urn:ao:club:Member",
+      "label": "Club Member",
+      "definition": "A student enrolled in the club, with contact and academic details.",
+      "synonyms": [
+        "Student",
+        "Member"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Person",
+        "note": "table member"
+      },
+      "tables": [
+        "student_club.member"
+      ]
+    },
+    {
+      "id": "urn:ao:geo:PostalCode",
+      "label": "Postal Code",
+      "definition": "A ZIP code and the city and state it belongs to.",
+      "synonyms": [
+        "ZIP Code",
+        "Zip"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/PostalAddress",
+        "note": "table zip_code"
+      },
+      "tables": [
+        "student_club.zip_code"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:Superhero",
+      "label": "Superhero",
+      "definition": "A comic-book character with a published identity and publisher.",
+      "synonyms": [
+        "Character",
+        "Hero"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table superhero"
+      },
+      "tables": [
+        "superhero.superhero"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:Superpower",
+      "label": "Superpower",
+      "definition": "A named superhuman ability a character can possess.",
+      "synonyms": [
+        "Power"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table superpower"
+      },
+      "tables": [
+        "superhero.superpower"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:HeroPower",
+      "label": "Hero Power",
+      "definition": "The stated strength with which one character holds one superpower.",
+      "synonyms": [
+        "Power Level"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table hero_power"
+      },
+      "tables": [
+        "superhero.hero_power"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:HeroAttribute",
+      "label": "Hero Attribute",
+      "definition": "One measured statistic of a character, from intelligence to strength.",
+      "synonyms": [
+        "Character Attribute",
+        "Stat"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table hero_attribute"
+      },
+      "tables": [
+        "superhero.hero_attribute"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:Alignment",
+      "label": "Alignment",
+      "definition": "A character's moral alignment category, such as good, bad or neutral.",
+      "synonyms": [
+        "Morality"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table alignment"
+      },
+      "tables": [
+        "superhero.alignment"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:AttributeType",
+      "label": "Attribute Type",
+      "definition": "The definition of a measurable character statistic.",
+      "synonyms": [
+        "Statistic Definition"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table attribute"
+      },
+      "tables": [
+        "superhero.attribute"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:Colour",
+      "label": "Colour",
+      "definition": "A colour associated with a character's costume or appearance.",
+      "synonyms": [
+        "Color"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table colour"
+      },
+      "tables": [
+        "superhero.colour"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:Gender",
+      "label": "Gender",
+      "definition": "A recorded gender category.",
+      "synonyms": [
+        "Sex"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table gender"
+      },
+      "tables": [
+        "superhero.gender"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:Publisher",
+      "label": "Publisher",
+      "definition": "The comic publisher that owns a character's rights.",
+      "synonyms": [
+        "Imprint"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Organization",
+        "note": "table publisher"
+      },
+      "tables": [
+        "superhero.publisher"
+      ]
+    },
+    {
+      "id": "urn:ao:comics:Species",
+      "label": "Species / Race",
+      "definition": "The fictional species or race a character belongs to.",
+      "synonyms": [
+        "Race",
+        "Species"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table race"
+      },
+      "tables": [
+        "superhero.race"
+      ]
+    },
+    {
+      "id": "urn:ao:medical:Patient",
+      "label": "Patient",
+      "definition": "A person receiving care, with demographic and admission details.",
+      "synonyms": [
+        "Person Under Care"
+      ],
+      "source": {
+        "kind": "schema.org",
+        "url": "https://schema.org/Patient",
+        "note": "table Patient"
+      },
+      "tables": [
+        "thrombosis_prediction.Patient"
+      ]
+    },
+    {
+      "id": "urn:ao:medical:Examination",
+      "label": "Examination",
+      "definition": "A clinical examination visit recording symptoms, diagnosis and outcome.",
+      "synonyms": [
+        "Clinical Visit",
+        "Consultation"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table Examination"
+      },
+      "tables": [
+        "thrombosis_prediction.Examination"
+      ]
+    },
+    {
+      "id": "urn:ao:medical:LaboratoryTest",
+      "label": "Laboratory Test",
+      "definition": "A lab measurement taken for a patient, such as a coagulation or blood value.",
+      "synonyms": [
+        "Lab Result",
+        "Blood Test"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table Laboratory"
+      },
+      "tables": [
+        "thrombosis_prediction.Laboratory"
+      ]
+    },
+    {
+      "id": "urn:ao:chem:Molecule",
+      "label": "Molecule",
+      "definition": "A chemical structure identified by an identifier and carcinogenicity label.",
+      "synonyms": [
+        "Compound",
+        "Chemical"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table molecule"
+      },
+      "tables": [
+        "toxicology.molecule"
+      ]
+    },
+    {
+      "id": "urn:ao:chem:Atom",
+      "label": "Atom",
+      "definition": "An atom within a molecule's structure, with its element and position.",
+      "synonyms": [
+        "Element Instance"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table atom"
+      },
+      "tables": [
+        "toxicology.atom"
+      ]
+    },
+    {
+      "id": "urn:ao:chem:Bond",
+      "label": "Bond",
+      "definition": "A chemical bond between two atoms, with its type.",
+      "synonyms": [
+        "Chemical Bond"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table bond"
+      },
+      "tables": [
+        "toxicology.bond"
+      ]
+    },
+    {
+      "id": "urn:ao:chem:AtomConnection",
+      "label": "Atom Connection",
+      "definition": "A connection between an atom and another atom or molecule in the structure.",
+      "synonyms": [
+        "Atom Link"
+      ],
+      "source": {
+        "kind": "curated",
+        "url": null,
+        "note": "table connected"
+      },
+      "tables": [
+        "toxicology.connected"
+      ]
+    }
+  ]
+}

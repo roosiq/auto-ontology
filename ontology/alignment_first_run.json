@@ -1,0 +1,1095 @@
+{
+  "pack_version": "1.0.0",
+  "concepts_in_pack": 74,
+  "terms_examined": 74,
+  "plans": [
+    {
+      "concept": "urn:ao:club:Major",
+      "concept_label": "Academic Major",
+      "method": "table-hint",
+      "evidence": "student_club.major",
+      "survivor": {
+        "id": "694e1d37-ccab-45e0-9d41-9bcb06fe180c",
+        "name_before": "Academic Major"
+      },
+      "merged_terms": [],
+      "tables": [
+        "student_club.major"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:bank:Account",
+      "concept_label": "Account",
+      "method": "table-hint",
+      "evidence": "financial.account",
+      "survivor": {
+        "id": "b92e62c9-eda7-41a3-a67c-32d2102ff032",
+        "name_before": "Account"
+      },
+      "merged_terms": [],
+      "tables": [
+        "financial.account"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:bank:Disposition",
+      "concept_label": "Account Disposition",
+      "method": "table-hint",
+      "evidence": "financial.disp",
+      "survivor": {
+        "id": "b1859618-57a3-459b-8de6-b3159fee1b95",
+        "name_before": "Account Disposition"
+      },
+      "merged_terms": [],
+      "tables": [
+        "financial.disp"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:Alignment",
+      "concept_label": "Alignment",
+      "method": "table-hint",
+      "evidence": "superhero.alignment",
+      "survivor": {
+        "id": "d42bc923-e963-4c5c-a898-e529d51b22ee",
+        "name_before": "Alignment"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.alignment"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:chem:Atom",
+      "concept_label": "Atom",
+      "method": "table-hint",
+      "evidence": "toxicology.atom",
+      "survivor": {
+        "id": "5b2bc6d7-92f8-4064-ba75-cba5abb8494c",
+        "name_before": "Atom"
+      },
+      "merged_terms": [],
+      "tables": [
+        "toxicology.atom"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:AttributeType",
+      "concept_label": "Attribute Type",
+      "method": "table-hint",
+      "evidence": "superhero.attribute",
+      "survivor": {
+        "id": "054febdc-dc24-474d-9653-c8c36d2bebe6",
+        "name_before": "Attribute Type"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.attribute"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:Badge",
+      "concept_label": "Badge",
+      "method": "table-hint",
+      "evidence": "codebase_community.badges",
+      "survivor": {
+        "id": "c6ddb070-1034-4823-b8fe-6a34b821bff0",
+        "name_before": "Badge"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.badges"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:chem:Bond",
+      "concept_label": "Bond",
+      "method": "table-hint",
+      "evidence": "toxicology.bond",
+      "survivor": {
+        "id": "18a0ae65-ed56-4d37-95ed-310b4ec469df",
+        "name_before": "Bond"
+      },
+      "merged_terms": [],
+      "tables": [
+        "toxicology.bond"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:club:Budget",
+      "concept_label": "Budget",
+      "method": "table-hint",
+      "evidence": "student_club.budget",
+      "survivor": {
+        "id": "5d3af63e-8497-4b99-a441-63363d0b70b1",
+        "name_before": "Budget"
+      },
+      "merged_terms": [],
+      "tables": [
+        "student_club.budget"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:card_games:CardLegality",
+      "concept_label": "Card Legality",
+      "method": "table-hint",
+      "evidence": "card_games.legalities",
+      "survivor": {
+        "id": "5c4a69ec-5207-437e-adfd-e3a7266cd584",
+        "name_before": "Card Legality"
+      },
+      "merged_terms": [],
+      "tables": [
+        "card_games.legalities"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:card_games:CardRuling",
+      "concept_label": "Card Ruling",
+      "method": "table-hint",
+      "evidence": "card_games.rulings",
+      "survivor": {
+        "id": "71362564-e4b8-4abd-84c7-f8a29ba844dc",
+        "name_before": "Card Ruling"
+      },
+      "merged_terms": [],
+      "tables": [
+        "card_games.rulings"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:card_games:CardSet",
+      "concept_label": "Card Set",
+      "method": "table-hint",
+      "evidence": "card_games.sets",
+      "survivor": {
+        "id": "9421fde0-e03c-4422-9531-0b73e82a38cb",
+        "name_before": "Card Set"
+      },
+      "merged_terms": [],
+      "tables": [
+        "card_games.sets"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:card_games:SetTranslation",
+      "concept_label": "Card Set Translation",
+      "method": "table-hint",
+      "evidence": "card_games.set_translations",
+      "survivor": {
+        "id": "25de163a-2a45-4b21-a707-16c094f0766f",
+        "name_before": "Card Set Translation"
+      },
+      "merged_terms": [],
+      "tables": [
+        "card_games.set_translations"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:Circuit",
+      "concept_label": "Circuit",
+      "method": "table-hint",
+      "evidence": "formula_1.circuits",
+      "survivor": {
+        "id": "d9a4ab50-e59d-4a40-b825-4c204fb37266",
+        "name_before": "Circuit"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.circuits"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:bank:Client",
+      "concept_label": "Client",
+      "method": "table-hint",
+      "evidence": "financial.client",
+      "survivor": {
+        "id": "be703761-b76e-4587-a18c-444002d02f5a",
+        "name_before": "Client"
+      },
+      "merged_terms": [],
+      "tables": [
+        "financial.client"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:club:Member",
+      "concept_label": "Club Member",
+      "method": "table-hint",
+      "evidence": "student_club.member",
+      "survivor": {
+        "id": "4aba15a0-e923-40a7-9824-018420959f16",
+        "name_before": "Club Member"
+      },
+      "merged_terms": [],
+      "tables": [
+        "student_club.member"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:Colour",
+      "concept_label": "Colour",
+      "method": "table-hint",
+      "evidence": "superhero.colour",
+      "survivor": {
+        "id": "97d767dc-8388-45ad-a002-37a6aa515d52",
+        "name_before": "Colour"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.colour"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:Comment",
+      "concept_label": "Comment",
+      "method": "table-hint",
+      "evidence": "codebase_community.comments",
+      "survivor": {
+        "id": "454d6b42-5498-4e9a-81b0-99cbabe73d69",
+        "name_before": "Comment"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.comments"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:Constructor",
+      "concept_label": "Constructor",
+      "method": "table-hint",
+      "evidence": "formula_1.constructors",
+      "survivor": {
+        "id": "e57ce756-586e-4903-a44c-a2881d41813f",
+        "name_before": "Constructor"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.constructors"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:ConstructorResult",
+      "concept_label": "Constructor Result",
+      "method": "table-hint",
+      "evidence": "formula_1.constructorresults",
+      "survivor": {
+        "id": "a0eb168d-9ad4-4dfc-93c8-2a22d0ef25aa",
+        "name_before": "Constructor Result"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.constructorResults"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:ConstructorStanding",
+      "concept_label": "Constructor Standing",
+      "method": "table-hint",
+      "evidence": "formula_1.constructorstandings",
+      "survivor": {
+        "id": "7f617e9e-ae0f-434a-8a91-3042e66954d4",
+        "name_before": "Constructor Standing"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.constructorStandings"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:finance:Period",
+      "concept_label": "Consumption Period",
+      "method": "table-hint",
+      "evidence": "debit_card_specializing.yearmonth",
+      "survivor": {
+        "id": "77a2a16b-359b-4df5-9963-48672368ee85",
+        "name_before": "Consumption Period"
+      },
+      "merged_terms": [],
+      "tables": [
+        "debit_card_specializing.yearmonth"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:sport:Country",
+      "concept_label": "Country",
+      "method": "table-hint",
+      "evidence": "european_football_2.country",
+      "survivor": {
+        "id": "a0ad272f-7c1c-4056-8e06-685b6eb9a0f6",
+        "name_before": "Country"
+      },
+      "merged_terms": [],
+      "tables": [
+        "european_football_2.Country"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:finance:Customer",
+      "concept_label": "Customer",
+      "method": "table-hint",
+      "evidence": "debit_card_specializing.customers",
+      "survivor": {
+        "id": "8efe7566-59b2-4c22-bbca-5e7405902ddf",
+        "name_before": "Customer (debit_card_specializing.public.customers)"
+      },
+      "merged_terms": [
+        {
+          "id": "040a5090-3656-48fc-b026-647f91a2b4e8",
+          "name": "Customer"
+        }
+      ],
+      "tables": [
+        "debit_card_specializing.customers",
+        "demo.customers"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:bank:District",
+      "concept_label": "District",
+      "method": "table-hint",
+      "evidence": "financial.district",
+      "survivor": {
+        "id": "164c826e-f7d1-4ae8-ab9f-502c7d34bca4",
+        "name_before": "District"
+      },
+      "merged_terms": [],
+      "tables": [
+        "financial.district"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:Driver",
+      "concept_label": "Driver",
+      "method": "table-hint",
+      "evidence": "formula_1.drivers",
+      "survivor": {
+        "id": "c6a477ec-11d8-4b75-bb8a-b591a2679bbc",
+        "name_before": "Driver"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.drivers"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:DriverStanding",
+      "concept_label": "Driver Standing",
+      "method": "table-hint",
+      "evidence": "formula_1.driverstandings",
+      "survivor": {
+        "id": "5282b954-9ba5-416b-bca4-fa0ac5a74f69",
+        "name_before": "Driver Standings"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.driverStandings"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:club:ClubEvent",
+      "concept_label": "Event",
+      "method": "table-hint",
+      "evidence": "student_club.event",
+      "survivor": {
+        "id": "df5659ec-364d-49e8-8198-c577415437f7",
+        "name_before": "Event"
+      },
+      "merged_terms": [],
+      "tables": [
+        "student_club.event"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:medical:Examination",
+      "concept_label": "Examination",
+      "method": "table-hint",
+      "evidence": "thrombosis_prediction.examination",
+      "survivor": {
+        "id": "32060990-1968-443b-9b63-38eb94b9e78c",
+        "name_before": "Examination"
+      },
+      "merged_terms": [],
+      "tables": [
+        "thrombosis_prediction.Examination"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:club:Expense",
+      "concept_label": "Expense",
+      "method": "table-hint",
+      "evidence": "student_club.expense",
+      "survivor": {
+        "id": "35eea5d3-2648-4756-8e2a-d3c6a26b75d8",
+        "name_before": "Expense"
+      },
+      "merged_terms": [],
+      "tables": [
+        "student_club.expense"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:card_games:ForeignCardData",
+      "concept_label": "Foreign Card Data",
+      "method": "table-hint",
+      "evidence": "card_games.foreign_data",
+      "survivor": {
+        "id": "108f1475-7dcb-499f-a9c5-2fca604a863e",
+        "name_before": "Foreign Card Data"
+      },
+      "merged_terms": [],
+      "tables": [
+        "card_games.foreign_data"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:education:FreeReducedPriceMeal",
+      "concept_label": "Free or Reduced Price Meal",
+      "method": "table-hint",
+      "evidence": "california_schools.frpm",
+      "survivor": {
+        "id": "88e445a5-1377-4636-8243-003ef0014862",
+        "name_before": "Free And Reduced Price Meal Record"
+      },
+      "merged_terms": [],
+      "tables": [
+        "california_schools.frpm"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:finance:GasStation",
+      "concept_label": "Gas Station",
+      "method": "table-hint",
+      "evidence": "debit_card_specializing.gasstations",
+      "survivor": {
+        "id": "4583534b-bacc-467a-80ac-521cb233f60a",
+        "name_before": "Gas Station"
+      },
+      "merged_terms": [],
+      "tables": [
+        "debit_card_specializing.gasstations"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:Gender",
+      "concept_label": "Gender",
+      "method": "table-hint",
+      "evidence": "superhero.gender",
+      "survivor": {
+        "id": "9d8aa3e8-dd5c-4c8f-9740-18db1346f92d",
+        "name_before": "Gender"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.gender"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:HeroAttribute",
+      "concept_label": "Hero Attribute",
+      "method": "table-hint",
+      "evidence": "superhero.hero_attribute",
+      "survivor": {
+        "id": "4959016b-300e-45a9-a457-485e2e15655a",
+        "name_before": "Hero Attribute"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.hero_attribute"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:club:Income",
+      "concept_label": "Income",
+      "method": "table-hint",
+      "evidence": "student_club.income",
+      "survivor": {
+        "id": "c90a2df8-04b5-44fb-9326-c02dbcb30944",
+        "name_before": "Income"
+      },
+      "merged_terms": [],
+      "tables": [
+        "student_club.income"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:medical:LaboratoryTest",
+      "concept_label": "Laboratory Test",
+      "method": "table-hint",
+      "evidence": "thrombosis_prediction.laboratory",
+      "survivor": {
+        "id": "d8602693-e256-4483-9fca-624ebf77b662",
+        "name_before": "Laboratory Test Result"
+      },
+      "merged_terms": [],
+      "tables": [
+        "thrombosis_prediction.Laboratory"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:LapTime",
+      "concept_label": "Lap Time",
+      "method": "table-hint",
+      "evidence": "formula_1.laptimes",
+      "survivor": {
+        "id": "5e7492fc-4ea3-44a8-b8d4-795e9f0f3c6c",
+        "name_before": "Lap Time"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.lapTimes"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:sport:League",
+      "concept_label": "League",
+      "method": "table-hint",
+      "evidence": "european_football_2.league",
+      "survivor": {
+        "id": "57f3948b-2839-4a7b-9a18-09f033da7f65",
+        "name_before": "League"
+      },
+      "merged_terms": [],
+      "tables": [
+        "european_football_2.League"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:bank:Loan",
+      "concept_label": "Loan",
+      "method": "table-hint",
+      "evidence": "financial.loan",
+      "survivor": {
+        "id": "1fc309e5-a8f0-4f8e-8276-31d8abf0b5f8",
+        "name_before": "Loan"
+      },
+      "merged_terms": [],
+      "tables": [
+        "financial.loan"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:sport:Match",
+      "concept_label": "Match",
+      "method": "table-hint",
+      "evidence": "european_football_2.match",
+      "survivor": {
+        "id": "01f1e299-f69d-414b-9cf8-e17f094a0af7",
+        "name_before": "Match"
+      },
+      "merged_terms": [],
+      "tables": [
+        "european_football_2.Match"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:chem:Molecule",
+      "concept_label": "Molecule",
+      "method": "table-hint",
+      "evidence": "toxicology.molecule",
+      "survivor": {
+        "id": "c7170fa5-42c8-4d91-bc05-89a838d68932",
+        "name_before": "Molecule"
+      },
+      "merged_terms": [],
+      "tables": [
+        "toxicology.molecule"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:medical:Patient",
+      "concept_label": "Patient",
+      "method": "table-hint",
+      "evidence": "thrombosis_prediction.patient",
+      "survivor": {
+        "id": "e23da3b5-2bc3-42af-856b-98007a57039d",
+        "name_before": "Patient"
+      },
+      "merged_terms": [],
+      "tables": [
+        "thrombosis_prediction.Patient"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:finance:PaymentCard",
+      "concept_label": "Payment Card",
+      "method": "table-hint",
+      "evidence": "financial.card",
+      "survivor": {
+        "id": "2dfa3b16-9b97-48fa-885b-fb7332df98d9",
+        "name_before": "Card (financial.public.card)"
+      },
+      "merged_terms": [],
+      "tables": [
+        "financial.card"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:bank:PaymentOrder",
+      "concept_label": "Payment Order",
+      "method": "table-hint",
+      "evidence": "financial.order",
+      "survivor": {
+        "id": "5765029a-a910-4363-b76d-4c61c838a085",
+        "name_before": "Order (financial.public.order)"
+      },
+      "merged_terms": [],
+      "tables": [
+        "financial.order"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:PitStop",
+      "concept_label": "Pit Stop",
+      "method": "table-hint",
+      "evidence": "formula_1.pitstops",
+      "survivor": {
+        "id": "36c18bd5-dac4-45e1-8bf3-7149130cfcbb",
+        "name_before": "Pit Stop"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.pitStops"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:sport:Player",
+      "concept_label": "Player",
+      "method": "table-hint",
+      "evidence": "european_football_2.player",
+      "survivor": {
+        "id": "d69c198f-b409-42e0-8e88-ac876298c729",
+        "name_before": "Player"
+      },
+      "merged_terms": [],
+      "tables": [
+        "european_football_2.Player"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:sport:PlayerAttribute",
+      "concept_label": "Player Attribute",
+      "method": "table-hint",
+      "evidence": "european_football_2.player_attributes",
+      "survivor": {
+        "id": "371518be-c453-40ec-81b4-069b7e94256f",
+        "name_before": "Player Attribute"
+      },
+      "merged_terms": [],
+      "tables": [
+        "european_football_2.Player_Attributes"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:Post",
+      "concept_label": "Post",
+      "method": "table-hint",
+      "evidence": "codebase_community.posts",
+      "survivor": {
+        "id": "fce9e7ca-ac62-4e90-b1c7-ec41ab68510c",
+        "name_before": "Post"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.posts"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:PostHistory",
+      "concept_label": "Post History",
+      "method": "table-hint",
+      "evidence": "codebase_community.posthistory",
+      "survivor": {
+        "id": "7cf585c3-ee9f-47cc-8971-871517051cb0",
+        "name_before": "Post History"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.postHistory"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:PostLink",
+      "concept_label": "Post Link",
+      "method": "table-hint",
+      "evidence": "codebase_community.postlinks",
+      "survivor": {
+        "id": "f92e06bc-adef-41b9-a5a5-4701fb65c878",
+        "name_before": "Post Link"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.postLinks"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:geo:PostalCode",
+      "concept_label": "Postal Code",
+      "method": "table-hint",
+      "evidence": "student_club.zip_code",
+      "survivor": {
+        "id": "8208d195-401d-4d26-aba3-c5a99d4ad18f",
+        "name_before": "Zip Code"
+      },
+      "merged_terms": [],
+      "tables": [
+        "student_club.zip_code"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:finance:Product",
+      "concept_label": "Product",
+      "method": "table-hint",
+      "evidence": "debit_card_specializing.products",
+      "survivor": {
+        "id": "42d870cf-67c6-43a1-8b1c-95791969cfd4",
+        "name_before": "Product"
+      },
+      "merged_terms": [],
+      "tables": [
+        "debit_card_specializing.products"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:Publisher",
+      "concept_label": "Publisher",
+      "method": "table-hint",
+      "evidence": "superhero.publisher",
+      "survivor": {
+        "id": "29703215-23aa-4645-9266-b6c39993527c",
+        "name_before": "Publisher"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.publisher"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:Qualifying",
+      "concept_label": "Qualifying Result",
+      "method": "table-hint",
+      "evidence": "formula_1.qualifying",
+      "survivor": {
+        "id": "dfcad310-2924-48b1-b596-20ce4f78c56c",
+        "name_before": "Qualifying Result"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.qualifying"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:Race",
+      "concept_label": "Race",
+      "method": "table-hint",
+      "evidence": "formula_1.races",
+      "survivor": {
+        "id": "82dcc75a-069d-4c13-aed8-8c998d873cc9",
+        "name_before": "Race"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.races"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:RaceResult",
+      "concept_label": "Race Result",
+      "method": "table-hint",
+      "evidence": "formula_1.results",
+      "survivor": {
+        "id": "4651e3d6-4db5-4b37-8a72-183888eec832",
+        "name_before": "Result"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.results"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:education:SatScore",
+      "concept_label": "SAT Score",
+      "method": "table-hint",
+      "evidence": "california_schools.satscores",
+      "survivor": {
+        "id": "958260f3-a05b-4588-94e6-57f5abb65ddb",
+        "name_before": "Sat Scores"
+      },
+      "merged_terms": [],
+      "tables": [
+        "california_schools.satscores"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:education:School",
+      "concept_label": "School",
+      "method": "table-hint",
+      "evidence": "california_schools.schools",
+      "survivor": {
+        "id": "10f3dd48-71f4-4364-ab99-a1f88b1d616d",
+        "name_before": "School"
+      },
+      "merged_terms": [],
+      "tables": [
+        "california_schools.schools"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:Season",
+      "concept_label": "Season",
+      "method": "table-hint",
+      "evidence": "formula_1.seasons",
+      "survivor": {
+        "id": "9c9947ee-a64e-423d-9bc0-26c15efd8126",
+        "name_before": "Formula One Season"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.seasons"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:Species",
+      "concept_label": "Species / Race",
+      "method": "table-hint",
+      "evidence": "superhero.race",
+      "survivor": {
+        "id": "23eaeebc-1852-445d-9188-35efb6882558",
+        "name_before": "Race (superhero.public.race)"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.race"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:f1:Status",
+      "concept_label": "Status",
+      "method": "table-hint",
+      "evidence": "formula_1.status",
+      "survivor": {
+        "id": "e2e78b55-8b2d-4e84-92c4-3e7212fe97b3",
+        "name_before": "Status"
+      },
+      "merged_terms": [],
+      "tables": [
+        "formula_1.status"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:Superhero",
+      "concept_label": "Superhero",
+      "method": "table-hint",
+      "evidence": "superhero.superhero",
+      "survivor": {
+        "id": "ed125217-a33b-464c-af57-718f5f3102e5",
+        "name_before": "Superhero"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.superhero"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:comics:Superpower",
+      "concept_label": "Superpower",
+      "method": "table-hint",
+      "evidence": "superhero.superpower",
+      "survivor": {
+        "id": "1b2fc26e-86c2-485b-8f53-75439f373f86",
+        "name_before": "Superpower"
+      },
+      "merged_terms": [],
+      "tables": [
+        "superhero.superpower"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:Tag",
+      "concept_label": "Tag",
+      "method": "table-hint",
+      "evidence": "codebase_community.tags",
+      "survivor": {
+        "id": "bde9066d-7475-41e4-8ad9-1d5d16ecbc8d",
+        "name_before": "Tag"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.tags"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:sport:Team",
+      "concept_label": "Team",
+      "method": "table-hint",
+      "evidence": "european_football_2.team",
+      "survivor": {
+        "id": "3f938a2d-0c1c-42cb-a7e2-36912680fd11",
+        "name_before": "Team"
+      },
+      "merged_terms": [],
+      "tables": [
+        "european_football_2.Team"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:sport:TeamAttribute",
+      "concept_label": "Team Attribute",
+      "method": "table-hint",
+      "evidence": "european_football_2.team_attributes",
+      "survivor": {
+        "id": "3b051b92-5b16-43c6-bf77-e8635fcae87b",
+        "name_before": "Team Attributes"
+      },
+      "merged_terms": [],
+      "tables": [
+        "european_football_2.Team_Attributes"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:card_games:Card",
+      "concept_label": "Trading Card",
+      "method": "table-hint",
+      "evidence": "card_games.cards",
+      "survivor": {
+        "id": "d76f393e-58da-4984-bfb1-23070bc17b6c",
+        "name_before": "Card"
+      },
+      "merged_terms": [],
+      "tables": [
+        "card_games.cards"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:finance:Transaction",
+      "concept_label": "Transaction",
+      "method": "table-hint",
+      "evidence": "debit_card_specializing.transactions_1k",
+      "survivor": {
+        "id": "dc8e2bfe-9c81-4f63-8174-f042b97da8d3",
+        "name_before": "Transaction"
+      },
+      "merged_terms": [
+        {
+          "id": "604d3c3e-c843-4083-8bfa-34703e07a5aa",
+          "name": "Transaction (financial.public.trans)"
+        }
+      ],
+      "tables": [
+        "debit_card_specializing.transactions_1k",
+        "financial.trans"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:User",
+      "concept_label": "User",
+      "method": "table-hint",
+      "evidence": "codebase_community.users",
+      "survivor": {
+        "id": "2d009c07-27e1-4e19-abcc-ec6d4db9522a",
+        "name_before": "User"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.users"
+      ],
+      "related_concepts_differing": []
+    },
+    {
+      "concept": "urn:ao:codebase:Vote",
+      "concept_label": "Vote",
+      "method": "table-hint",
+      "evidence": "codebase_community.votes",
+      "survivor": {
+        "id": "baf0f146-3ea2-40e3-b6b3-2f7dafbf0708",
+        "name_before": "Vote"
+      },
+      "merged_terms": [],
+      "tables": [
+        "codebase_community.votes"
+      ],
+      "related_concepts_differing": []
+    }
+  ],
+  "unmatched": [
+    {
+      "term": "Order",
+      "id": "77f79570-914d-4b25-8102-56284d62aea8",
+      "tables": [
+        "demo.orders"
+      ]
+    }
+  ],
+  "merged_terms": 2,
+  "applied": false
+}
